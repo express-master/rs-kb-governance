@@ -1,0 +1,10 @@
+ID Kunjungan: 2025-001125
+ID Pasien: 10221
+Poli: Poli Penyakit Dalam
+Jenis Kunjungan: Rawat Jalan
+Tanggal: 2025-03-02
+Jam: 09:15
+Dokter: dr. Rani Suryani
+Keluhan: Sesak nafas dan batuk 3 hari terakhir
+Penjamin: BPJS
+No Kartu JKN: 000123456789

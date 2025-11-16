@@ -1,0 +1,25 @@
+[KB-METADATA]
+Source_ID: RM-2025-000331
+Classification: PII → Rahasia setelah de-ID (karena catatan medis)
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk analisis alur pemeriksaan (bukan diagnosa pribadi)
+Access_Roles: [IT, RekamMedik, Dokter]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops3
+
+Isi Dokumen (Versi Bersih)
+
+ID Rekam Medis: RM-2025-000331  
+ID Pasien: [ID REDACTED]  
+Keluhan Utama: Sesak napas dan batuk  
+Diagnosa Dokter (ICD-10): J20.9 (Acute Bronchitis)  
+Rencana Tindakan:
+- Nebulizer  
+- Edukasi istirahat cukup  
+- Obat simptomatik  
+
+Catatan:
+Tidak ada identitas pribadi dalam versi ini. Semua data medis sensitif sudah dianonimkan.

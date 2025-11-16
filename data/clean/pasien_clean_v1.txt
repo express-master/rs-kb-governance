@@ -1,0 +1,26 @@
+[KB-METADATA]
+Source_ID: PASIEN-2025-01
+Classification: PII → Internal (non-PII) setelah de-ID
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk administrasi & analisis umum (tanpa identitas)
+Access_Roles: [IT, RekamMedik]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops1
+
+Isi Dokumen (Versi Bersih)
+
+Nama Lengkap: [NAME REDACTED]  
+Nomor Rekam Medis: [ID REDACTED]  
+Nomor KTP: [ID REDACTED]  
+Tanggal Lahir: [DATE REDACTED]  
+Alamat: [ADDRESS REDACTED]  
+No HP: [PHONE REDACTED]  
+Email: [EMAIL REDACTED]  
+Jenis Kelamin: Laki-laki  
+Golongan Darah: O  
+Status Perkawinan: Menikah  
+Pekerjaan: Karyawan Swasta  
+Pendidikan Terakhir: SMK  

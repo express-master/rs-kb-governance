@@ -1,0 +1,24 @@
+[KB-METADATA]
+Source_ID: VITAL-2025-000331
+Classification: PII → Internal (non-PII) setelah de-ID
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk referensi pola vital sign pasien tanpa identitas
+Access_Roles: [IT, RekamMedik, Dokter]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops4
+
+Isi Dokumen (Versi Bersih)
+
+ID Kunjungan: 2025-000331  
+Tinggi Badan: 168 cm  
+Berat Badan: 64 kg  
+Tekanan Darah: 130/85 mmHg  
+Nadi: 92 bpm  
+Suhu Tubuh: 37.5 °C  
+Gula Darah: 125 mg/dL  
+Laju Napas: 19 x/menit  
+Lingkar Perut: 82 cm  
+Saturasi Oksigen: 96%  

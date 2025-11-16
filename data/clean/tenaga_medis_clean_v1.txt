@@ -1,0 +1,23 @@
+[KB-METADATA]
+Source_ID: NAKES-2025-01
+Classification: PII → Internal (non-PII) setelah de-ID
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk kebutuhan operasional non-pribadi
+Access_Roles: [IT, Manajemen]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops6
+
+Isi Dokumen (Versi Bersih)
+
+Nama Tenaga Medis: [NAME REDACTED]  
+Jenis Kelamin: Perempuan  
+Profesi: Dokter Spesialis Paru  
+No STR: [ID REDACTED]  
+No SIP: [ID REDACTED]  
+Jabatan Medis: Dokter Spesialis  
+Estimasi Waktu Pemeriksaan: 30 menit  
+Poli: Poli Penyakit Dalam  
+Status Praktik: Aktif  

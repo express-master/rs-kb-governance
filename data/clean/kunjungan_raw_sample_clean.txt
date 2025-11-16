@@ -1,0 +1,24 @@
+[KB-METADATA]
+Source_ID: KUNJUNGAN-2025-001125
+Classification: PII → Internal (non-PII) setelah de-ID
+License: All rights (internal use)
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk pengecekan alur kunjungan & analisis pelayanan
+Access_Roles: [IT, RekamMedik, Poli]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-10-45
+
+Isi Dokumen (Versi Bersih)
+
+ID Kunjungan: 2025-001125
+ID Pasien: [ID REDACTED]
+Poli: Poli Penyakit Dalam
+Jenis Kunjungan: Rawat Jalan
+Tanggal: 2025-03-02
+Jam: 09:15
+Dokter: [NAME REDACTED]
+Keluhan: Sesak nafas dan batuk 3 hari terakhir
+Penjamin: BPJS
+No Kartu JKN: [ID REDACTED]

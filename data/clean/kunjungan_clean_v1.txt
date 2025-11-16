@@ -1,0 +1,27 @@
+[KB-METADATA]
+Source_ID: KUNJ-2025-000331
+Classification: PII → Internal (non-PII) setelah de-ID
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk analisis alur pelayanan & kebutuhan operasional
+Access_Roles: [IT, RekamMedik, Poli]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops2
+
+Isi Dokumen (Versi Bersih)
+
+ID Kunjungan: 2025-000331  
+ID Pasien: [ID REDACTED]  
+Poli: Poli Penyakit Dalam  
+Jenis Kunjungan: Rawat Jalan  
+Tanggal: 2025-03-02  
+Jam Masuk: 09:15  
+Jam Keluar: 09:55  
+Dokter Pemeriksa: [NAME REDACTED]  
+Keluhan Utama: Sesak napas 3 hari  
+Penjamin: BPJS  
+Nomor Kartu JKN: [ID REDACTED]  
+Status Kunjungan: Selesai  
+Durasi: 40 menit  

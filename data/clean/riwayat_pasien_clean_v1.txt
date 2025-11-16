@@ -1,0 +1,27 @@
+[KB-METADATA]
+Source_ID: RP-2025-01
+Classification: PII → Rahasia setelah de-ID (riwayat medis)
+License: All rights internal use
+Data_Policy: DATA_POLICY v1.0 (2025-11-16)
+Policy_Path: /data/policy/DATA_POLICY.md
+Purpose: KB internal untuk analisis riwayat medis tanpa identitas pasien
+Access_Roles: [Dokter, RekamMedik, IT]
+Retention: keep 12 months | keep last 3 versions
+Takedown: privacy@rscontoh.ac.id | SLA ≤72h
+Redaction_Signature: deid-2025-11-16-ops5
+
+Isi Dokumen (Versi Bersih)
+
+ID Pasien: [ID REDACTED]
+
+Riwayat Alergi:  
+- Alergi Paracetamol  
+- Alergi Udang  
+
+Riwayat Penyakit Kronis:
+- Asma  
+- Gastritis berulang  
+
+Riwayat Penggunaan Obat:
+- Salbutamol inhaler (PRN)  
+- Antasida  
