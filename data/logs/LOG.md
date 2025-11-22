@@ -74,3 +74,29 @@ Actions :
   PII redacted : 0  
   Output : /data/clean/POLICY-PRIVACY-2025-01.txt  
   Policy Check : PASS (DATA_POLICY v1.0)
+
+[2025-11-23] Dedup run — Operator: uhkaava
+Exact duplicates removed: 1
+
+- pasien_clean_backup.txt (same checksum as pasien_clean_v1.txt)
+
+Near-duplicates resolved: 1 pair
+
+- kept: panduan_modul_rekam_medis_clean_v2.txt
+- superseded: panduan_modul_rekam_medis_clean_v1.txt
+  Reason: newer version + added section on resep workflow
+
+Pending manual review:
+
+- SOP-KEUANGAN-2024_v1 vs SOP-KEUANGAN-2025_v1 (similarity ~0.82)
+
+[2025-11-23] Planned KB refresh — Operator: uhkaava
+Docs to update: DATA_OBAT-2025-11, SOP-REKMED-2025-02
+Steps: de-ID → dedup → chunk → build index v2 (Blue)
+Smoke test: 8 queries on pelayanan, obat, kunjungan
+Rollback plan: revert to index v1 (Green) if retrieval drops
+
+[2025-11-23] Takedown — Source_ID: PASIEN-2025-01
+Reason: training dataset request contains PII
+Action: removed from /clean and /chunks; index v2 rebuilt
+Completed by: uhkaava | 2025-11-23 14:10 WIB

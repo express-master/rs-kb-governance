@@ -1,0 +1,40 @@
+{
+  "index_version": "1.0.0",
+  "built_at": "2025-11-23T13:20:00+07:00",
+  "status": "active",
+  "color": "green",
+  "builder": "Admin",
+  "source_docs": [
+    {
+      "source_id": "PASIEN-2025-01",
+      "version": "1.0.0",
+      "label": "PII->Internal"
+    },
+    {
+      "source_id": "KUNJ-2025-000331",
+      "version": "1.0.0",
+      "label": "PII->Internal"
+    },
+    {
+      "source_id": "RM-2025-000331",
+      "version": "1.0.0",
+      "label": "PII->Rahasia"
+    }
+  ],
+  "chunk_files": [
+    { "file": "PASIEN-2025-01__chunks.jsonl", "chunks": 1 },
+    { "file": "KUNJ-2025-000331__chunks.jsonl", "chunks": 2 },
+    { "file": "RM-2025-000331__chunks.jsonl", "chunks": 3 }
+  ],
+  "dedup": {
+    "exact_removed": 1,
+    "near_resolved": 1
+  },
+  "smoketest": {
+    "queries_total": 8,
+    "queries_passed": 8,
+    "latency_avg_ms": 320
+  },
+  "rollback_to": null,
+  "notes": "First stable index built after de-ID + dedup + chunking."
+}

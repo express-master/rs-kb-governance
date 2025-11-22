@@ -182,3 +182,27 @@ Setiap dokumen bersih dapat memiliki `Access_Roles` (misal: `[IT, RekamMedik, Ma
 **Change Log Policy:**
 
 - v1.0 (2025-11-16) — Kebijakan awal untuk tugas KB SIMRS berbasis database rumah sakit.
+
+## Refresh Cadence (KB Update Schedule)
+
+| Content Type                      | Check Frequency | Update Triggers                   |
+| --------------------------------- | --------------- | --------------------------------- |
+| SOP / Kebijakan RS                | Monthly         | official memo, revised procedure  |
+| Panduan Modul SIMRS / Rekam Medis | Monthly         | feature change, workflow update   |
+| Statistik Kunjungan (agregat)     | Weekly          | new records, corrections          |
+| Data Obat & Layanan               | Weekly          | price/stock updates               |
+| Konten publik (FAQ layanan RS)    | Monthly         | new announcements, policy changes |
+
+## Retention Policy
+
+- Default retention: 12 months
+- Keep max 3 active versions per document
+- Older versions moved to /archive (not indexed)
+
+## Takedown / Removal Procedure
+
+1. Request submitted via privacy@rscontoh.ac.id
+2. Identify Source_ID + derived files (/clean, /chunks, index)
+3. Remove all versions and invalidate cache
+4. Rebuild index if required
+5. Log completion within SLA ≤72h
