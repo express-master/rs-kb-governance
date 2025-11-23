@@ -2,8 +2,8 @@
 
 ## Studi Kasus: Database Sistem Informasi Rumah Sakit (SIMRS)
 
-Repositori ini berisi contoh penerapan **Data Governance** dan **Knowledge Base Construction** menggunakan data dari database Rumah Sakit.  
-Fokus utamanya adalah memastikan setiap dokumen yang digunakan **aman**, **terklasifikasi dengan benar**, dan **siap dipakai** dalam sistem pencarian/RAG (Retrieval-Augmented Generation).
+Repositori ini berisi contoh penerapan **Data Governance** dan **Knowledge Base Construction** menggunakan data yang diambil dari database Rumah Sakit (SIMRS).
+Tujuannya memastikan setiap dokumen yang masuk ke sistem _aman, terklasifikasi, dan siap digunakan_ dalam pipeline RAG (Retrieval-Augmented Generation).
 
 ---
 
@@ -12,13 +12,20 @@ Fokus utamanya adalah memastikan setiap dokumen yang digunakan **aman**, **terkl
 ```bash
 data/
 ├── catalog/
-│ └── DATA_SOURCES.md       # Daftar dokumen + sumber, izin, klasifikasi
+│ └── DATA_SOURCES.md                   # Daftar dokumen + sumber, izin, klasifikasi
 ├── policy/
-│ └── DATA_POLICY.md        # Kebijakan data & aturan PII/De-ID
+│ └── DATA_POLICY.md                    # Kebijakan data & aturan PII/De-ID
 ├── logs/
-│ └── LOG.md                # Catatan proses de-ID & ingest
-├── raw/                    # Dokumen mentah (ada PII, belum aman)
-└── clean/                  # Dokumen bersih, sudah di-de-ID (aman untuk KB)
+│ └── LOG.md                            # Catatan proses de-ID & ingest
+├── raw/                                # Dokumen mentah (ada PII, belum aman)
+└── clean/                              # Dokumen bersih, sudah di-de-ID (aman untuk KB)
+├── chunks/                             # Hasil chunking dari dokumen clean (JSONL / txt)
+│   ├── PASIEN-2025-01__chunks.jsonl
+│   ├── KUNJ-2025-000331__chunks.jsonl
+│   └── RM-2025-000331__chunks.jsonl
+│
+└── index_history/                      # Riwayat versi index (Blue/Green), untuk audit & rollback
+    └── manifest_index_v1.json
 ```
 
 **Penjelasan singkat:**
@@ -113,22 +120,80 @@ Dokumen di sini **boleh dipakai** untuk indexing / RAG.
 
 ---
 
-## ✔ Alur Singkat Pengolahan Dokumen
+### **6. chunks/**
 
-1. **Ambil dokumen mentah** → letakkan di `/raw`.
-2. **Daftar** dokumen tersebut di `DATA_SOURCES.md`.
-3. **Klasifikasikan** jenis datanya (Public/Internal/PII/Rahasia).
-4. Jika ada PII → lakukan **De-ID**.
-5. Simpan versi bersihnya ke folder `/clean`.
-6. Catat seluruh proses ke `LOG.md`.
-7. Hanya file dari `clean/` yang dipakai untuk KB.
+Berisi hasil pemotongan dokumen dari menu Chunking & Metadata.
+
+Tiap file `.jsonl` berisi baris-baris chunk dengan struktur:
+
+```json
+{
+  "metadata": {
+    "source_id": "PASIEN-2025-01",
+    "version": "1.0.0",
+    "title": "Data Pasien (De-ID)",
+    "section": "identitas > umum",
+    "chunk_id": "PASIEN-2025-01#c007",
+    "chunk_index": 7,
+    "total_chunks": 22,
+    "created_at": "2025-11-18",
+    "license": "Internal Use Only",
+    "lang": "id",
+    "pii_score": 0,
+    "checksum": "sha256:ab4f...9c"
+  },
+  "text": "Isi chunk dokumen yang sudah bersih..."
+}
+```
+
+Tujuan: membuat dokumen mudah dicari oleh RAG/LLM.
 
 ---
 
-## 📌 Catatan
+### **7. index_history/**
 
-- Repositori ini bersifat contoh akademik, sehingga beberapa file diisi dengan placeholder.
-- Struktur dan alur ditulis menyerupai standar Data Governance di institusi kesehatan.
-- Cocok untuk tugas kuliah, presentasi, atau implementasi awal SIMRS.
+Folder ini menyimpan:
+
+- manifest versi index (v1, v2, dst)
+- riwayat Blue/Green index
+- timestamp switch & rollback
+
+Contoh isi:
+
+```json
+{
+  "index_version": "1.1.0",
+  "created_at": "2025-11-22T14:20:00",
+  "source_documents": [
+    "PASIEN-2025-01_v1.txt",
+    "KUNJ-2025-000331_v1.txt",
+    "RM-2025-000331_v1.txt"
+  ],
+  "total_chunks": 47,
+  "embedding_model": "MiniLM-v2",
+  "notes": "Index hasil update chunking & dedup 22 Nov 2025"
+}
+```
+
+Folder ini berguna untuk rollback jika index baru error.
 
 ---
+
+## 🔄 Alur Pengolahan Dokumen
+
+1. Input file mentah → `/raw`
+2. Daftarkan ke **DATA_SOURCES.md**
+3. Tentukan klasifikasi
+4. Lakukan **De-ID** → pindah ke `/clean`
+5. Jalankan **dedup** (exact & near-duplicate)
+6. Lakukan **chunking** → hasil ke `/chunks`
+7. Buat embeddings & index → disimpan di **index_history/**
+8. Catat seluruh proses di **LOG.md**
+
+---
+
+## 📝 Catatan
+
+- Struktur folder mengikuti standar Data Governance di sektor kesehatan.
+- Semua contoh data bersifat fiktif / dummy.
+- Repositori ini dibuat untuk tugas Topik 6–7 (De-ID, Dedup, Chunking, Metadata, Retensi).
