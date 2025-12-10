@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build:vectors": "node scripts/build_vectors.mjs",
+    "start": "node server.js"
+  }
+}
